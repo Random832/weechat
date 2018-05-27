@@ -160,7 +160,8 @@ gui_chat_clrtoeol (struct t_gui_window *window)
     wmove (GUI_WINDOW_OBJECTS(window)->win_chat,
            window->win_chat_cursor_y,
            window->win_chat_cursor_x);
-    wclrtoeol (GUI_WINDOW_OBJECTS(window)->win_chat);
+    gui_window_reset_color (GUI_WINDOW_OBJECTS(window)->win_chat, GUI_COLOR_CHAT);
+    gui_window_clrtoeol (GUI_WINDOW_OBJECTS(window)->win_chat);
 }
 
 /*
